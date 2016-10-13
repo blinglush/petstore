@@ -1,0 +1,73 @@
+<div class="container" style="margin-top: 100px">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <div class="panel pet-panel-primary panel-primary">
+                <div class="pet-panel-heading panel-heading"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                     Pet Details</div>
+                <div class="panel-body" style="padding: 25px">
+
+                    <div class="control-group">
+                        <label class="control-label">Pet Name:</label>
+                        <label class="control-label static-text">
+                            {{petDetailCtrl.pet.name}}
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Status:</label>
+                        <label class="control-label static-text">
+                            {{petDetailCtrl.pet.status}}
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Category:</label>
+                        <label class="control-label static-text">
+                            {{petDetailCtrl.pet.category.name}}
+                        </label>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Tags:</label>
+                        <span ng-repeat="pettag in petDetailCtrl.pet.petTags">
+                             {{pettag.tag.name}}
+                        </span>
+
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Pet Images</label>
+                        <span ng-repeat="img in petDetailCtrl.pet.petImages">
+                            <img src="/images/{{img.imageUrl}}" class="img-thumbnail" width="80" height="80"/>
+                        </span>
+
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-default pull-left" ui-sref="dashboard">Back</button>
+
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary pull-right" ui-sref="dashboard">Edit</button>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+
+
+</div>

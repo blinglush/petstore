@@ -1,0 +1,77 @@
+<div class="container" style="margin-top: 100px" >
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <div class="panel pet-panel-primary panel-primary">
+                <div class="pet-panel-heading panel-heading"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                     Pet Inventory</div>
+                <div class="panel-body" style="padding: 25px">
+                    <form name="petEntryForm" ng-submit="addCtrl.petEntry()">
+                        <div class="form-group">
+                            <input ng-model="addCtrl.pet.name" type="text" class="form-control" id="name" placeholder="Pet Name" required>
+                        </div>
+                        <div class="form-group">
+                            <!--<p>Debug: {{addCtrl.pet.status}}</p>-->
+                            <ui-select ng-model="addCtrl.pet.status" theme="bootstrap" >
+                                <ui-select-match placeholder="Select status">{{$select.selected}}</ui-select-match>
+                                <ui-select-choices repeat="stat in addCtrl.status | filter:$select.search">
+                                    <div ng-bind-html="stat"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+                        </div>
+                        <div class="form-group">
+                            <!--{{addCtrl.pet.category}}-->
+                            <ui-select ng-model="addCtrl.pet.category" theme="bootstrap" reset-search-input="false">
+                                <ui-select-match placeholder="Select Pet Category">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="ch in addCtrl.categories | filter:$select.search">
+                                    {{ch.name}}
+                                </ui-select-choices>
+
+                            </ui-select>
+                        </div>
+                        <div class="form-group">
+                            <!--{{addCtrl.pet.tags}}-->
+                            <ui-select multiple ng-model="addCtrl.pet.tags" search-enabled="addCtrl.tagsSearchEnabled" reset-search-input="false">
+                                     <ui-select-match placeholder="Select tags">{{$item.name}}</ui-select-match>
+                                <ui-select-choices repeat="tg in addCtrl.tags | propsFilter: {name: $select.search}">
+                                <div ng-bind-html="tg.name | highlight: $select.search"></div>
+
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="file" file-model="myFile" width="50"/><br/>
+                            <button ng-click="addCtrl.uploadFile()" type="button" class="btn btn-primary btn-sm" ng-disabled="upload">Upload</button>
+
+                        </div>
+                        <hr/>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <input type="submit" ui-sref="dashboard" value="cancel" class="btn btn-default pull-left">
+                                </div>
+                                <div class="col-md-6 ">
+                                    <input type="submit" value="Add" class="btn btn-info pull-right">
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+
+</div>
+
+
+
+

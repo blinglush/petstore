@@ -1,0 +1,14 @@
+# Compiled source #
+###################
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.iml
+mvnw*
+*.idea
+*.mvn
+
+# Packages #
+target/*
