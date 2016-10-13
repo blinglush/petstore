@@ -12,3 +12,6 @@ Initial Setup for image storage
 
 Now Start app by giving following command
     mvn spring-boot:run
+
+
+Open file petstore.mwb for Data Model
